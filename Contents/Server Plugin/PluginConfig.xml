@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<PluginConfig>
+ 	<Field id= "userId" type="textfield">
+		<Label>Netatmo User Name:</Label>
+	</Field>
+	<Field id="userPass" type="textfield" secure="true">
+		<Label>User Password:</Label>
+	</Field>
+	<Field id="netatmoUnits" type="menu" defaultValue="Fahrenheit">
+		<Label>Reporting Units:</Label>
+		<List>
+			<Option value="us">US (ºF/inch)"</Option>
+			<Option value="metric">Metric (ºC/mm)</Option>
+		</List>
+	</Field>
+
+	<Field id="netatmoFreq" type="menu" defaultValue="10">
+		<Label>Frequency of updates (Minutes):</Label>
+		<List>
+			<Option value="5">5</Option>
+			<Option value="10">10</Option>
+			<Option value="15">15</Option>
+			<Option value="20">20</Option>
+			<Option value="25">25</Option>
+			<Option value="30">30</Option>
+			<Option value="35">35</Option>
+			<Option value="40">40</Option>
+			<Option value="45">45</Option>
+			<Option value="50">50</Option>
+			<Option value="55">55</Option>
+			<Option value="60">60</Option>
+		</List>
+	</Field>
+	
+	<Field id="netatmoTimeout" type="menu" defaultValue="8">
+		<Label>		Timeout for thermostat 
+		connection (seconds):</Label>
+		<List>
+			<Option value="1">1</Option>
+			<Option value="2">2</Option>
+			<Option value="3">3</Option>
+			<Option value="4">4</Option>
+			<Option value="5">5</Option>
+			<Option value="6">6</Option>
+			<Option value="7">7</Option>
+			<Option value="8">8</Option>
+			<Option value="9">9</Option>
+			<Option value="10">10</Option>
+			<Option value="12">12</Option>
+			<Option value="14">14</Option>
+			<Option value="17">17</Option>
+			<Option value="20">20</Option>
+			<Option value="25">25</Option>
+			<Option value="30">30</Option>
+		</List>
+	</Field>
+	
+	<Field id="pcSep1" type="separator" />
+
+	<Field id="showDebugInfo1" type="menu" defaultValue="0">
+		<Label>Logging level</Label>
+		<List>
+			<Option value="0">None</Option>
+			<Option value="1">Normal</Option>
+			<Option value="2">Verbose</Option>
+			<Option value="3">Debug</Option>
+			<Option value="4">Intense Debug</Option>
+		</List>
+	</Field>
+	
+	<Field id="v0" type="label" visibleBindingId="showDebugInfo1" visibleBindingValue="0">
+		<Label>		No logging at all 
+	(not suggested)</Label>
+	</Field>
+	<Field id="v1" type="label" visibleBindingId="showDebugInfo1" visibleBindingValue="1">
+		<Label>		Normal operating events</Label>
+	</Field>
+	<Field id="v2" type="label" visibleBindingId="showDebugInfo1" visibleBindingValue="2">
+		<Label>		Detailed information</Label>
+	</Field>
+	<Field id="v3" type="label" visibleBindingId="showDebugInfo1" visibleBindingValue="3,4">
+		<Label>		If you are having problems with the plugin (or you are
+		instructed by support), you can enable debugging Use with 
+		caution. This level is not suggested for regular operation.</Label>
+	</Field>
+	
+</PluginConfig>

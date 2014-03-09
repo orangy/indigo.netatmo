@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Actions> 
+    <Action id="pollNetatmo">
+        <Name>Poll Netatmo for Updates</Name>
+        <CallbackMethod>actionControl</CallbackMethod>
+    </Action>	
+</Actions>

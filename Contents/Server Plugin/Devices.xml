@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<Devices>
+    <Device type="custom" id="netatmoIndoorModule">
+        <Name>Netatmo Weather Station: Indoor Module</Name>
+        <ConfigUI>
+            <Field id="stationName" type="textfield">
+                <Label>Netatmo Station Name:</Label>
+            </Field>
+            <Field id="moduleName" type="textfield">
+                <Label>Module Name</Label>
+                <Description>(As registered with Netatmo.com)</Description>
+            </Field>
+            <Field id="foo2" type="label">
+                <Label>(As registered with Netatmo.com)</Label>
+            </Field>
+        </ConfigUI>
+
+        <States>
+            <State id="Temperature">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Temperature</TriggerLabel>
+                <ControlPageLabel>Temperature</ControlPageLabel>
+            </State>
+            <State id="Humidity">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Humidity</TriggerLabel>
+                <ControlPageLabel>Humidity</ControlPageLabel>
+            </State>
+            <State id="Pressure">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Pressure</TriggerLabel>
+                <ControlPageLabel>Pressure</ControlPageLabel>
+            </State>
+            <State id="Co2">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>CO2</TriggerLabel>
+                <ControlPageLabel>CO2</ControlPageLabel>
+            </State>
+            <State id="Noise">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Noise</TriggerLabel>
+                <ControlPageLabel>Noise</ControlPageLabel>
+            </State>
+            <State id="WiFi_Signal">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>WiFi_Signal</TriggerLabel>
+                <ControlPageLabel>WiFi_Signal</ControlPageLabel>
+            </State>
+            <State id="Observation_Time">
+                <ValueType>Integer</ValueType>
+                <TriggerLabel>Last Read</TriggerLabel>
+                <ControlPageLabel>Last Read</ControlPageLabel>
+            </State>
+        </States>
+        <UiDisplayStateId>Temperature</UiDisplayStateId>
+    </Device>
+
+
+    <Device type="custom" id="netatmoOutdoorModule">
+        <Name>Netatmo Weather Station: Outdoor Module</Name>
+        <ConfigUI>
+            <Field id="stationName" type="textfield">
+                <Label>Netatmo Station Name:</Label>
+            </Field>
+            <Field id="moduleName" type="textfield">
+                <Label>Module Name</Label>
+            </Field>
+            <Field id="foo2" type="label">
+                <Label>(As registered with Netatmo.com)</Label>
+            </Field>
+
+            <Field type="checkbox" id="SupportsBatteryLevel" hidden="true" defaultValue="true"/>
+			<Field type="checkbox" id="SupportsSensorValue"  hidden="true" defaultValue="true"/>
+        </ConfigUI>
+
+        <States>
+            <State id="Temperature">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Temperature</TriggerLabel>
+                <ControlPageLabel>Temperature</ControlPageLabel>
+            </State>
+            <State id="Humidity">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Humidity</TriggerLabel>
+                <ControlPageLabel>Humidity</ControlPageLabel>
+            </State>
+            <State id="RF_Signal">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>RF_Signal</TriggerLabel>
+                <ControlPageLabel>RF_Signal</ControlPageLabel>
+            </State>
+            <State id="batteryLevel">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Battery Level</TriggerLabel>
+                <ControlPageLabel>Battery Level</ControlPageLabel>
+            </State>
+            <State id="Observation_Time">
+                <ValueType>Integer</ValueType>
+                <TriggerLabel>Last Read</TriggerLabel>
+                <ControlPageLabel>Last Read</ControlPageLabel>
+            </State>
+        </States>
+        <UiDisplayStateId>Temperature</UiDisplayStateId>
+    </Device>
+
+
+    <Device type="custom" id="netatmoAddlIndoorModule">
+        <Name>Netatmo Weather Station: Additional Indoor Module</Name>
+        <ConfigUI>
+            <Field id="stationName" type="textfield">
+                <Label>Netatmo Station Name:</Label>
+            </Field>
+            <Field id="moduleName" type="textfield">
+                <Label>Module Name</Label>
+            </Field>
+            <Field id="foo" type="label">
+                <Label>(As registered with Netatmo.com)</Label>
+            </Field>
+        </ConfigUI>
+
+        <States>
+            <State id="Temperature">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Temperature</TriggerLabel>
+                <ControlPageLabel>Temperature</ControlPageLabel>
+            </State>
+            <State id="Humidity">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Humidity</TriggerLabel>
+                <ControlPageLabel>Humidity</ControlPageLabel>
+            </State>
+            <State id="Co2">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>CO2</TriggerLabel>
+                <ControlPageLabel>CO2</ControlPageLabel>
+            </State>
+            <State id="RF_Signal">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>RF_Signal</TriggerLabel>
+                <ControlPageLabel>RF_Signal</ControlPageLabel>
+            </State>
+            <State id="Battery_Level">
+                <ValueType>Float</ValueType>
+                <TriggerLabel>Battery_Level</TriggerLabel>
+                <ControlPageLabel>Battery_Level</ControlPageLabel>
+            </State>
+            <State id="Observation_Time">
+                <ValueType>Integer</ValueType>
+                <TriggerLabel>Last Read</TriggerLabel>
+                <ControlPageLabel>Last Read</ControlPageLabel>
+            </State>
+        </States>
+        <UiDisplayStateId>Temperature</UiDisplayStateId>
+    </Device>
+</Devices>
