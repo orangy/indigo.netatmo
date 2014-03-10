@@ -49,8 +49,10 @@ class Plugin(indigo.PluginBase):
         if self.logLevel > 1: indigo.server.log(u'Entered: Funct startup' ,  type=self.pluginDisplayName + ' Debug', isError=False)
         versionCheck(self, self.pluginDisplayName, self.logLevel, self.pluginId, self.pluginVersion)
 
+    def deviceStartComm(self, dev):
+        self.readNetatmo()
 
-  ########################################
+    ########################################
     def readNetatmo(self):
         if self.logLevel > 1: indigo.server.log(u'Entered: Funct readNetatmo' ,  type=self.pluginDisplayName + ' Debug', isError=False)
 
@@ -102,17 +104,24 @@ class Plugin(indigo.PluginBase):
                                     measure = "Observation_Time"
 
                                 if measure == "Battery_Level":
-                                    deviceData[module]["batteryLevel"]= int(deviceData[module][measure])*100/5640
-                                    del deviceData[module][measure]
-                                    measure = "batteryLevel"
+                                    battery = int(deviceData[module][measure])*100/6000
+                                    batteryString = str(battery) + "%"
+                                    netatmoDict[station][module].updateStateOnServer(key="batteryLevel", value=battery, uiValue=batteryString)
+                                    measure = ""
+
+                                if measure == "Temperature":
+                                    t = deviceData[module][measure]
+                                    if self.netatmoUnits == "us":
+                                        t = (t * 9/5) + 32
+                                    netatmoDict[station][module].updateStateOnServer(key="Temperature", value=t, uiValue=str(t) + "°")
+                                    netatmoDict[station][module].updateStateOnServer(key="sensorValue", value=t, uiValue=str(t) + "°")
+                                    measure = ""
 
                                 if self.netatmoUnits == "us":
-                                    if measure == "Temperature":
-                                        deviceData[module][measure] = (deviceData[module][measure] * 9/5) + 32
                                     if measure == "Pressure":
                                         deviceData[module][measure] = deviceData[module][measure] / 33.86389
 
-                                if (measure != ""):
+                                if measure != "":
                                     netatmoDict[station][module].updateStateOnServer(key=measure, value=deviceData[module][measure], decimalPlaces=2)
                         except Exception, e:
                             self.errorLog("Error: -%s- reading data for Indigo device '%s'" % (e, netatmoDict[station][module].name))

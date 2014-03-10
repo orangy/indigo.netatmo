@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Devices>
-    <Device type="custom" id="netatmoIndoorModule">
+    <Device type="sensor" id="netatmoIndoorModule">
         <Name>Netatmo Weather Station: Indoor Module</Name>
         <ConfigUI>
             <Field id="stationName" type="textfield">
@@ -13,6 +13,8 @@
             <Field id="foo2" type="label">
                 <Label>(As registered with Netatmo.com)</Label>
             </Field>
+            <Field type="checkbox" id="SupportsSensorValue"  hidden="true" defaultValue="true"/>
+            <Field type="checkbox" id="SupportsOnState"  hidden="true" defaultValue="false"/>
         </ConfigUI>
 
         <States>
@@ -52,11 +54,11 @@
                 <ControlPageLabel>Last Read</ControlPageLabel>
             </State>
         </States>
-        <UiDisplayStateId>Temperature</UiDisplayStateId>
+        <UiDisplayStateId>sensorValue</UiDisplayStateId>
     </Device>
 
 
-    <Device type="custom" id="netatmoOutdoorModule">
+    <Device type="sensor" id="netatmoOutdoorModule">
         <Name>Netatmo Weather Station: Outdoor Module</Name>
         <ConfigUI>
             <Field id="stationName" type="textfield">
@@ -71,6 +73,7 @@
 
             <Field type="checkbox" id="SupportsBatteryLevel" hidden="true" defaultValue="true"/>
 			<Field type="checkbox" id="SupportsSensorValue"  hidden="true" defaultValue="true"/>
+			<Field type="checkbox" id="SupportsOnState"  hidden="true" defaultValue="false"/>
         </ConfigUI>
 
         <States>
@@ -89,22 +92,17 @@
                 <TriggerLabel>RF_Signal</TriggerLabel>
                 <ControlPageLabel>RF_Signal</ControlPageLabel>
             </State>
-            <State id="batteryLevel">
-                <ValueType>Number</ValueType>
-                <TriggerLabel>Battery Level</TriggerLabel>
-                <ControlPageLabel>Battery Level</ControlPageLabel>
-            </State>
             <State id="Observation_Time">
                 <ValueType>Integer</ValueType>
                 <TriggerLabel>Last Read</TriggerLabel>
                 <ControlPageLabel>Last Read</ControlPageLabel>
             </State>
         </States>
-        <UiDisplayStateId>Temperature</UiDisplayStateId>
+        <UiDisplayStateId>sensorValue</UiDisplayStateId>
     </Device>
 
 
-    <Device type="custom" id="netatmoAddlIndoorModule">
+    <Device type="sensor" id="netatmoAddlIndoorModule">
         <Name>Netatmo Weather Station: Additional Indoor Module</Name>
         <ConfigUI>
             <Field id="stationName" type="textfield">
@@ -116,6 +114,9 @@
             <Field id="foo" type="label">
                 <Label>(As registered with Netatmo.com)</Label>
             </Field>
+            <Field type="checkbox" id="SupportsBatteryLevel" hidden="true" defaultValue="true"/>
+            <Field type="checkbox" id="SupportsSensorValue"  hidden="true" defaultValue="true"/>
+            <Field type="checkbox" id="SupportsOnState"  hidden="true" defaultValue="false"/>
         </ConfigUI>
 
         <States>
@@ -139,17 +140,12 @@
                 <TriggerLabel>RF_Signal</TriggerLabel>
                 <ControlPageLabel>RF_Signal</ControlPageLabel>
             </State>
-            <State id="Battery_Level">
-                <ValueType>Float</ValueType>
-                <TriggerLabel>Battery_Level</TriggerLabel>
-                <ControlPageLabel>Battery_Level</ControlPageLabel>
-            </State>
             <State id="Observation_Time">
                 <ValueType>Integer</ValueType>
                 <TriggerLabel>Last Read</TriggerLabel>
                 <ControlPageLabel>Last Read</ControlPageLabel>
             </State>
         </States>
-        <UiDisplayStateId>Temperature</UiDisplayStateId>
+        <UiDisplayStateId>sensorValue</UiDisplayStateId>
     </Device>
 </Devices>
