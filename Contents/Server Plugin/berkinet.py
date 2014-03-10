@@ -36,11 +36,8 @@ def setLogLevel(self, pluginDisplayName, logLevel):
 ########################################
 def versionCheck(self, pluginDisplayName, logLevel, pluginId, pluginVersion):	
 	if logLevel > 1: self.debugLog(u"versionCheck() called")
-	sp = re.split('\.', pluginId)
-	myName = sp[2]
 	myVersion = str(pluginVersion)
-	versionServer = 'http://yikes.com/plugins/'
-	theUrl = versionServer + myName + '.html'
+	theUrl = 'http://orangy.github.io/indigo.netatmo/version.html'
 	if logLevel > 2: indigo.server.log('url:%s' % theUrl, type=pluginDisplayName)
 	socket.setdefaulttimeout(3)
 	try:
