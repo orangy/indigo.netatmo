@@ -17,6 +17,9 @@ Features
 Release Notes
 =============
 
+`v0.4.2 March, 2014`
+    Work in progress. Improving UI and interactions.
+
 `v0.4.1 Aug 31, 2013`
     Changed state "when" to "Observation_Time" to remove field name conflict with SQL Logger
 
